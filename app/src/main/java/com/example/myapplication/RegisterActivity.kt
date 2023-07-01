@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,13 +14,9 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
-import com.google.firebase.database.ktx.snapshots
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.flow.collectLatest
 import java.security.MessageDigest
 
 class RegisterActivity : AppCompatActivity() {
@@ -27,9 +24,9 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var passwordEditText: EditText
     lateinit var repeatPasswordEditText: EditText
     lateinit var registerButton: Button
+    lateinit var loginButton: Button
 
     private lateinit var database: DatabaseReference
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +36,7 @@ class RegisterActivity : AppCompatActivity() {
         passwordEditText = findViewById(R.id.password_edittext)
         repeatPasswordEditText = findViewById(R.id.repeat_password_edittext)
         registerButton = findViewById(R.id.register_button)
+        loginButton = findViewById(R.id.login_button)
 
         FirebaseApp.initializeApp(this)
         database = Firebase.database.getReference("Users")
@@ -46,6 +44,11 @@ class RegisterActivity : AppCompatActivity() {
 
         registerButton.setOnClickListener {
             register()
+        }
+
+        loginButton.setOnClickListener {
+            val loginIntent = Intent(this@RegisterActivity, LoginActivity::class.java)
+            startActivity(loginIntent)
         }
     }
 
@@ -88,10 +91,14 @@ class RegisterActivity : AppCompatActivity() {
                 // Get Post object and use the values to update the UI
                 if (!dataSnapshot.exists()){
                     database.child(newUser.login!!).setValue(newUser)
+                    SharedPreferenceManager.saveUser(this@RegisterActivity, newUser)
                 }else{
                     Toast.makeText(this@RegisterActivity, "Login already in use", Toast.LENGTH_LONG).show()
                 }
                 database.orderByChild("login").equalTo(newUser.login).removeEventListener(this)
+
+                val mainIntent = Intent(this@RegisterActivity, MainActivity::class.java
+                startActivity(mainIntent)
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
