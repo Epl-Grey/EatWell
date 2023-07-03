@@ -1,13 +1,17 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.ktx.Firebase;
+import com.example.myapplication.fragments.HomeFragment;
+import com.example.myapplication.fragments.foodFragment;
+import com.example.myapplication.fragments.menuFragment;
+import com.example.myapplication.fragments.personalFragment;
+import com.example.myapplication.fragments.scannerFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,9 +20,46 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+        // as soon as the application opens the first
+        // fragment should be shown to the user
+        // in this case it is algorithm fragment
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+
+
         if(SharedPreferenceManager.INSTANCE.getLogin(this) == null) {
             Intent registerIntent = new Intent(this, RegisterActivity.class);
-            startActivity(registerIntent);
+           // startActivity(registerIntent);
+
+
         }
     }
+
+    private final BottomNavigationView.OnNavigationItemSelectedListener navListener = item -> {
+        // By using switch we can easily get
+        // the selected fragment
+        // by using there id.b
+        Fragment selectedFragment = null;
+        int itemId = item.getItemId();
+        if (itemId == R.id.home) {
+            selectedFragment = new HomeFragment();
+        } else if (itemId == R.id.menu) {
+            selectedFragment = new menuFragment();
+        } else if (itemId == R.id.personal) {
+            selectedFragment = new personalFragment();
+        } else if (itemId == R.id.scanner) {
+            selectedFragment = new scannerFragment();
+        }else if (itemId == R.id.food) {
+            selectedFragment = new foodFragment();
+        }
+        // It will help to replace the
+        // one fragment to other.
+        if (selectedFragment != null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+        }
+        return true;
+    };
+
 }

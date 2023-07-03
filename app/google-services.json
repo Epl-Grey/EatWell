@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "295906836252",
+    "firebase_url": "https://nutritracker-83dc2-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "nutritracker-83dc2",
+    "storage_bucket": "nutritracker-83dc2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295906836252:android:13d4bbc39d9b29de8284d9",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295906836252-iv5lkfr3j5bagmo7lvcaijj8vevgoq8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJuFUyq6MkumMVoDpQBQRTmz4s0h5GLPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295906836252-iv5lkfr3j5bagmo7lvcaijj8vevgoq8k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

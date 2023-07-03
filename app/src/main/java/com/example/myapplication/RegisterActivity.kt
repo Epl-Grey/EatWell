@@ -97,8 +97,8 @@ class RegisterActivity : AppCompatActivity() {
                 }
                 database.orderByChild("login").equalTo(newUser.login).removeEventListener(this)
 
-                val mainIntent = Intent(this@RegisterActivity, MainActivity::class.java
-                startActivity(mainIntent)
+                val mainIntent = Intent(this@RegisterActivity, MainActivity::class.java);
+                startActivity(mainIntent);
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
