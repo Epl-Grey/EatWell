@@ -1,5 +1,48 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">EatWell</string>
+    <string name="title1">Добро пожаловать!</string>
+    <string name="title2">Составление рациона</string>
+    <string name="title3">Учетная запись</string>
+    <string name="title4">Давайте перейдём к авторизации</string>
+    <string name="open">Открыть</string>
+    <string name="close">Закрыть</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+    <string name="description1">Наше приложение поможет составить рацион на день по вашим предпочтениям.</string>
+    <string name="description2">Меню составляется основе ваших продуктов, которые вы можете добавить с помощью сканера.</string>
+    <string name="description3">Благодаря регистриции все ваши данные будут успешно сохранены.</string>
+    <string name="description4">Не забудьте указать ваш образ жизни, а также цель, чтобы мы смогли правильно подобрать вам рацион.</string>
+    <string name="time">
+        15:00
+    </string>
+    <string name="date">
+        22.02.2022
+
+    </string>
+    <string name="name">Парацетомол
+    </string>
+
+    <string name="medicine_re">
+MEDICINE\nREMINDER
+</string>
+
+    <string name="kl">3 раза в сутки</string>
+    <string name="nam">Название
+</string>
+    <string name="dos">Дозировка</string>
+    <string name="dose">250 мг</string>
+    <string name="timeall">15:00,18:00,21:00</string>
+    <string name="kl2">3 раза в сутки           |</string>
+
+    <string-array name="lang">
+        <item>Русский</item>
+        <item>Английский</item>
+        <item>Немецкий</item>
+    </string-array>
+    <string name="some_id">Добавить
+
+
+</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

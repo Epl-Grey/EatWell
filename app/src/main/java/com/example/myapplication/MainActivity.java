@@ -12,6 +12,7 @@ import com.example.myapplication.fragments.menuFragment;
 import com.example.myapplication.fragments.personalFragment;
 import com.example.myapplication.fragments.scannerFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,14 +28,11 @@ public class MainActivity extends AppCompatActivity {
         // fragment should be shown to the user
         // in this case it is algorithm fragment
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+        Intent onBordingIntent = new Intent(this, OnBordingScreen.class);
+//        startActivity(onBordingIntent);
 
 
-        if(SharedPreferenceManager.INSTANCE.getLogin(this) == null) {
-            Intent registerIntent = new Intent(this, RegisterActivity.class);
-           // startActivity(registerIntent);
 
-
-        }
     }
 
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener = item -> {

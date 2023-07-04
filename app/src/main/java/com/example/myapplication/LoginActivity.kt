@@ -23,6 +23,8 @@ class LoginActivity : AppCompatActivity() {
     lateinit var loginButton: Button
     lateinit var registerButton: Button
 
+    lateinit var saveState: SaveState
+
     private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +38,8 @@ class LoginActivity : AppCompatActivity() {
 
         database = Firebase.database.getReference("Users")
         database.keepSynced(true)
+
+        saveState = SaveState(this, "ob")
 
         loginButton.setOnClickListener {
             login()
@@ -82,8 +86,9 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this@LoginActivity, "Welcome!", Toast.LENGTH_LONG).show()
 
                     val mainIntent = Intent(this@LoginActivity, MainActivity::class.java)
-                    finish()
+                    saveState.state = 2
                     startActivity(mainIntent)
+                    finish()
                 }else{
                     Toast.makeText(this@LoginActivity, "Incorrect auth data", Toast.LENGTH_LONG).show()
                 }

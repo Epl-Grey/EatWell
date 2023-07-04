@@ -26,6 +26,8 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var registerButton: Button
     lateinit var loginButton: Button
 
+    lateinit var saveState: SaveState
+
     private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +51,8 @@ class RegisterActivity : AppCompatActivity() {
         loginButton.setOnClickListener {
             val loginIntent = Intent(this@RegisterActivity, LoginActivity::class.java)
             startActivity(loginIntent)
+            saveState.state = 2
+            finish()
         }
     }
 
@@ -105,6 +109,8 @@ class RegisterActivity : AppCompatActivity() {
                 // Getting Post failed, log a message
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException())
                 database.orderByChild("login").equalTo(newUser.login).removeEventListener(this)
+                saveState.state = 2
+                finish()
             }
         }
 
