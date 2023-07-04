@@ -6,6 +6,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.R;
 import com.example.myapplication.fragments.HomeFragment;
 
 import java.time.LocalDate;
@@ -42,7 +43,7 @@ public class CalendarViewHolder extends RecyclerView.ViewHolder implements View.
         onItemListener.onItemClick(getAdapterPosition(),
                 days.get(getAdapterPosition()));
 
-        context.onCalendarItem(context.db);
+        //context.onCalendarItem(context.db);
 
 
     }

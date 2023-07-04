@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+android:layout_marginBottom="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:background="@color/white"
+android:id="@+id/la"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageDish"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="12dp"/>
+
+    <TextView
+    android:id="@+id/timeDay"
+    android:layout_width="220dp"
+    android:layout_height="27dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginTop="11dp"
+    android:gravity="top"
+    android:text="@string/name"
+    android:textAppearance="@style/some_id" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="10dp"
+        android:text="Омлет"
+        android:textSize="25sp"
+        android:layout_toRightOf="@id/imageDish"
+        android:layout_below="@id/timeDay"
+        android:textAppearance="@style/kl" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="350dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/name"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/imageDish"
+        android:gravity="top"
+        android:text="Время готовки 10 минут"
+        android:textAppearance="@style/kl" />
+
+    <ImageView
+        android:id="@+id/redactor"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginHorizontal="380dp"
+        android:layout_marginTop="120dp"
+        android:text="@string/time"
+        android:textAlignment="center"
+        android:textAppearance="@style/time_" />
+
+    <TextView
+        android:id="@+id/id_storage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/></RelativeLayout>
+
+   <RelativeLayout
+       android:layout_below="@id/la"
+       android:layout_width="match_parent"
+       android:layout_height="10dp"
+    />
+</RelativeLayout>
