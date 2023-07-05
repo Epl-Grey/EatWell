@@ -12,63 +12,68 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/listItem"
-            android:layout_width="match_parent"
-            android:layout_height="9dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="185dp"
-            android:layout_marginRight="185dp"
-            android:foregroundGravity="center"
-            android:background="@drawable/list3"/>
-
-        <TextView
-            android:id="@+id/register"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="20dp"
-            android:text="Регистрация"
-            android:textSize="32sp"
-            android:layout_marginLeft="25dp"
-            android:layout_below="@+id/listItem"
-            android:fontFamily="@font/montserrt4"
-            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/list3_w"
             />
-
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Регистрация"
+            android:textColor="@color/white"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/montserrt4"
+            android:textSize="32dp"
+            android:gravity="center"
+            />
         <TextView
             android:id="@+id/life"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="40dp"
-            android:text="Ваша образ жизни"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Основные данные"
             android:textSize="20sp"
-            android:layout_marginLeft="25dp"
-            android:layout_below="@+id/register"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/login"
             android:fontFamily="@font/montserrt4"
             android:textColor="@color/white"
             />
+
 
         <RelativeLayout
             android:id="@+id/rl1"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="170dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="70dp">
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_edtt"
+            android:layout_below="@id/life"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp">
 
             <TextView
+                android:id="@+id/txtz"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:text="1. Сидячий"
-                android:textSize="25sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/montserrt4"/>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:layout_marginTop="40dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtz"
+                android:layout_marginTop="3sp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/montserrt4"
                 android:text="Виды повседневной деятельности, требующие минимальных усилий, таких как отдых, сидинение за рабочим столом или за рулем."
-                android:textSize="15sp"
+                android:textSize="12.5sp"
                 android:textColor="@color/white"
                 />
 
@@ -78,53 +83,69 @@
         <RelativeLayout
             android:id="@+id/rl2"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="300dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="70dp">
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_edtt"
+            android:layout_below="@id/rl1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp">
 
             <TextView
+                android:id="@+id/zx"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:text="2. Малоактивный"
-                android:textSize="25sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/montserrt4"/>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:layout_marginTop="40dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/zx"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/montserrt4"
                 android:text="Виды повседневной деятельности, требующие некоторых усилий, таких как временное прибывание в стоячем положении , работа по дому."
-                android:textSize="15sp"
+                android:textSize="12.5sp"
                 android:textColor="@color/white"
                 />
 
 
-            +        </RelativeLayout>
+                </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/rl3"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="430dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="70dp">
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_edtt"
+            android:layout_below="@id/rl2"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp">
 
             <TextView
+                android:id="@+id/xc"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:text="3. Активный"
-                android:textSize="25sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/montserrt4"/>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:layout_marginTop="40dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/xc"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/montserrt4"
                 android:text="Виды повседневной деятельности, требующие небольших усилий, таких как стояние, физическая работа или регулярные треннировки."
-                android:textSize="15sp"
+                android:textSize="12.5sp"
                 android:textColor="@color/white"
                 />
 
@@ -134,25 +155,33 @@
         <RelativeLayout
             android:id="@+id/rl4"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="550dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="70dp">
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_edtt"
+            android:layout_below="@id/rl3"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp">
 
             <TextView
+                android:id="@+id/cv"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:text="4. Очень активный"
-                android:textSize="25sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/montserrt4"/>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:layout_marginTop="40dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cv"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/montserrt4"
                 android:text="Виды повседневной деятельности, требующие интенсивынх усилий, таких как строительные работы или регулярные энергичные упражнения."
-                android:textSize="15sp"
+                android:textSize="12.5sp"
                 android:textColor="@color/white"
                 />
 
@@ -161,14 +190,19 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnNext"
-            android:layout_width="100dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="660dp"
-            android:layout_marginLeft="250dp"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@drawable/whbtn_small"
+            android:layout_marginTop="14dp"
+            android:textColor="@color/black"
+            android:clickable="true"
             android:textAllCaps="false"
-            android:text="Далее"
-            android:textSize="20sp"
-            android:visibility="invisible"/>
+            android:fontFamily="@font/montserrt4"
+            android:focusable="true"
+            android:visibility="invisible"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/rl4"
+            android:layout_alignParentEnd="true"/>
         
     </RelativeLayout>
 

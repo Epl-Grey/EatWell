@@ -20,22 +20,23 @@
             android:background="@drawable/list4_w"
             />
         <TextView
-            android:id="@+id/register"
+            android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrt4"
-            android:textStyle="normal"
-            android:layout_marginLeft="20dp"
+            android:text="Регистрация"
+            android:textColor="@color/white"
             android:layout_marginTop="60dp"
-            android:textSize="32sp"
-            android:textColor="#ffffff"
-            tools:text="Регистрация"/>
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/montserrt4"
+            android:textSize="32dp"
+            android:gravity="center"
+            />
 
         <EditText
             android:id="@+id/login_edittext"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
-            android:layout_below="@id/register"
+            android:layout_below="@id/login"
             android:layout_marginHorizontal="40dp"
             android:layout_marginTop="130dp"
             android:background="@drawable/edt"
