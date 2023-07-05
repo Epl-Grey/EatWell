@@ -42,6 +42,13 @@ public class ObAdapter extends PagerAdapter {
             R.drawable.image4
     };
 
+    private int images2[] ={
+            R.drawable.list1,
+            R.drawable.list2,
+            R.drawable.list3,
+            R.drawable.list4
+    };
+
     @Override
     public int getCount() {
         return titles.length;
@@ -63,11 +70,13 @@ public class ObAdapter extends PagerAdapter {
         View v = layoutInflater.inflate(R.layout.page_ob,container,false);
 
         ImageView image = v.findViewById(R.id.image);
+        ImageView image2 = v.findViewById(R.id.image2);
         TextView title, description;
         title = v.findViewById(R.id.title);
         description = v.findViewById(R.id.description);
 
         image.setImageResource(images[position]);
+        image.setImageResource(images2[position]);
         title.setText(titles[position]);
         description.setText(descriptions[position]);
 

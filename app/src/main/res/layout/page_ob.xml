@@ -38,7 +38,13 @@
         android:textSize="18sp"/>
 
 
-
+        <ImageView
+            android:layout_marginTop="80dp"
+            android:id="@+id/image2"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_below="@+id/description"
+            />
 
 
 </RelativeLayout>
