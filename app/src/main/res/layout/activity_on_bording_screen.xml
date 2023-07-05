@@ -18,7 +18,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="83dp"
         app:layout_constraintLeft_toLeftOf="@id/button"
-        android:layout_marginLeft="-240dp"
+        android:layout_marginLeft="-210dp"
         android:text="Пропустить"
         android:textStyle="bold"
         android:textSize="15sp"
