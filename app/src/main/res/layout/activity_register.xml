@@ -3,72 +3,93 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/background"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register"
-            android:textSize="32dp"
-            android:gravity="center"
-            android:layout_marginVertical="100dp"/>
+            android:fontFamily="@font/montserrt4"
+            android:textStyle="normal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:textSize="32sp"
+            android:textColor="#ffffff"
+            tools:text="Регистрация"/>
 
         <EditText
             android:id="@+id/login_edittext"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Login"
-            android:textSize="20dp"
-            android:maxLines="1"
-            android:inputType="text"
+            android:layout_below="@id/register"
             android:layout_marginHorizontal="40dp"
-            android:layout_marginVertical="5dp"/>
+            android:layout_marginTop="140dp"
+            android:background="@drawable/edt"
+            android:fontFamily="@font/montserrt4"
+            android:gravity="center"
+            android:hint="Логин"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/password_edittext"
             android:layout_width="match_parent"
+            android:layout_below="@id/login_edittext"
+            android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:background="@drawable/edt"
+            android:hint="Пароль"
+            android:gravity="center"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
             android:textSize="20dp"
+            android:fontFamily="@font/montserrt4"
             android:maxLines="1"
             android:inputType="textVisiblePassword"
             android:layout_marginHorizontal="40dp"
-            android:layout_marginVertical="5dp"/>
+            />
 
         <EditText
             android:id="@+id/repeat_password_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Repeat password"
-            android:textSize="20dp"
-            android:maxLines="1"
-            android:inputType="textVisiblePassword"
+            android:layout_below="@id/password_edittext"
             android:layout_marginHorizontal="40dp"
-            android:layout_marginVertical="5dp" />
+            android:background="@drawable/edt"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrt4"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="10dp"
+            android:hint="Повторите пароль"
+            android:inputType="textVisiblePassword"
+            android:maxLines="1"
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/register_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="Завершить"
+            android:background="@drawable/whitebtn"
+            android:layout_below="@id/repeat_password_edittext"
             android:textSize="20dp"
+            android:fontFamily="@font/montserrt4"
+            android:textAllCaps="false"
             android:layout_marginHorizontal="50dp"
-            android:layout_marginTop="50dp"/>
+            android:layout_marginTop="60dp"/>
 
-        <Button
-            android:id="@+id/login_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Already have account"
-            android:textSize="20dp"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginTop="10dp"/>
-    </LinearLayout>
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
