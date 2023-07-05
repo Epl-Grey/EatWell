@@ -95,7 +95,8 @@
                 android:textSize="14dp"
                 android:text="М"
                 android:textColor="@color/white"
-                android:buttonTint="@color/white" />
+                android:buttonTint="@color/white"
+                android:onClick="onRadioButtonClicked"/>
 
             <RadioButton
                 android:id="@+id/radioF"
@@ -108,7 +109,7 @@
                 android:text="Ж"
                 android:textColor="@color/white"
                 android:buttonTint="@color/white"
-                />
+                android:onClick="onRadioButtonClicked"/>
         </RadioGroup>
 
         <EditText

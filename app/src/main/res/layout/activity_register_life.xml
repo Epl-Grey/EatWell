@@ -47,10 +47,128 @@
             android:textColor="@color/white"
             />
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/rl1"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
-        
+            android:layout_height="150dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="1. Сидячий"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrt4"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="40dp"
+                android:text="Виды повседневной деятельности, требующие минимальных усилий, таких как отдых, сидинение за рабочим столом или за рулем."
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                />
+
+
++        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl2"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="2. Малоактивный"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrt4"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="40dp"
+                android:text="Виды повседневной деятельности, требующие некоторых усилий, таких как временное прибывание в стоячем положении , работа по дому."
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                />
+
+
+            +        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl3"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="430dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="3. Активный"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrt4"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="40dp"
+                android:text="Виды повседневной деятельности, требующие небольших усилий, таких как стояние, физическая работа или регулярные треннировки."
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl4"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="550dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="4. Очень активный"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrt4"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="40dp"
+                android:text="Виды повседневной деятельности, требующие интенсивынх усилий, таких как строительные работы или регулярные энергичные упражнения."
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                />
+
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="660dp"
+            android:layout_marginLeft="250dp"
+            android:textAllCaps="false"
+            android:text="Далее"
+            android:textSize="20sp"
+            android:visibility="invisible"/>
         
     </RelativeLayout>
 
