@@ -13,8 +13,9 @@
         <ImageView
             android:layout_marginTop="80dp"
             android:id="@+id/image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_centerHorizontal="true"
+            android:layout_width="280dp"
+            android:layout_height="280dp" />
 
     <TextView
         android:id="@+id/title"
@@ -23,17 +24,21 @@
         android:text="@string/title1"
         android:textAlignment="center"
         android:layout_marginTop="390dp"
+        android:fontFamily="@font/montserrat2"
         android:textSize="28sp"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_marginBottom="20dp"/>
     <TextView
         android:id="@+id/description"
-        android:layout_width="match_parent"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
         android:text="@string/description1"
+        android:fontFamily="@font/montserrt4"
+        android:layout_marginTop="30dp"
         android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:textSize="18sp"/>
 
