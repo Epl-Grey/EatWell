@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.firebase.UserModel
@@ -21,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var loginEditText: EditText
     lateinit var passwordEditText: EditText
     lateinit var loginButton: Button
-    lateinit var registerButton: Button
+    lateinit var registerButton: TextView
 
     lateinit var saveState: SaveState
 
