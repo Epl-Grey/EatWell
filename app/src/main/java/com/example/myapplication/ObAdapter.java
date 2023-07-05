@@ -76,7 +76,7 @@ public class ObAdapter extends PagerAdapter {
         description = v.findViewById(R.id.description);
 
         image.setImageResource(images[position]);
-        image.setImageResource(images2[position]);
+        image2.setImageResource(images2[position]);
         title.setText(titles[position]);
         description.setText(descriptions[position]);
 

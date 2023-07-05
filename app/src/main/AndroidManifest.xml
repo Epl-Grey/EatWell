@@ -19,6 +19,9 @@
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".RegisterLifeActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterInformActivity"
             android:exported="false" />
         <activity

@@ -16,10 +16,10 @@
         <ImageView
             android:id="@+id/listItem"
             android:layout_width="match_parent"
-            android:layout_height="10dp"
+            android:layout_height="9dp"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="180dp"
-            android:layout_marginRight="180dp"
+            android:layout_marginLeft="185dp"
+            android:layout_marginRight="185dp"
             android:foregroundGravity="center"
             android:background="@drawable/list2"/>
 
@@ -56,22 +56,90 @@
             android:layout_marginTop="230dp"
             android:layout_marginRight="60dp"
             android:layout_marginLeft="60dp"
-            android:hint="Рост в см"
+            android:hint="Рост"
             android:textColorHint="@color/white" />
 
 
         <TextView
             android:id="@+id/aim"
-            android:layout_width="match_parent"
+            android:layout_width="60dp"
             android:layout_height="45dp"
             android:layout_marginTop="240dp"
             android:text="Пол"
             android:textSize="20sp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="65dp"
             android:layout_below="@+id/register"
             android:fontFamily="@font/montserrt4"
             android:textColor="@color/white"
             />
+
+        <RadioGroup
+            android:id="@+id/radioGrp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_toRightOf="@+id/aim"
+            android:layout_below="@+id/editRost"
+            android:layout_marginTop="49dp"
+            android:paddingLeft="8dp"
+            android:layout_marginLeft="20dp"
+            android:paddingRight="8dp"
+            >
+            <RadioButton
+                android:id="@+id/radioM"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:checked="true"
+                android:layout_weight="1"
+                android:textSize="14dp"
+                android:text="М"
+                android:textColor="@color/white"
+                android:buttonTint="@color/white" />
+
+            <RadioButton
+                android:id="@+id/radioF"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:checked="false"
+                android:layout_weight="1"
+                android:textSize="14dp"
+                android:text="Ж"
+                android:textColor="@color/white"
+                android:buttonTint="@color/white"
+                />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/editWeight"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="380dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginLeft="60dp"
+            android:hint="Вес"
+            android:textColorHint="@color/white" />
+
+        <EditText
+            android:id="@+id/editAges"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="440dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginLeft="60dp"
+            android:hint="Возраст"
+            android:textColorHint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="660dp"
+            android:layout_marginLeft="250dp"
+            android:textAllCaps="false"
+            android:text="Далее"
+            android:textSize="20sp"/>
 
     </RelativeLayout>
 
