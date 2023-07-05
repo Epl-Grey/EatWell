@@ -10,5 +10,9 @@ data class UserModel(
     val login: String? = null,
     val passwordHash: String? = null,
     val sex: String? = null,
-    val birthdate: String? = null
+    val birthdate: String? = null,
+    val weight: String? = null,
+    val height: String? = null,
+    val activity: String? = null,
+    val aim: String? = null
 )

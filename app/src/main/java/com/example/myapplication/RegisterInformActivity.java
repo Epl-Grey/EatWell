@@ -16,13 +16,14 @@ public class RegisterInformActivity extends AppCompatActivity {
     EditText editWeight;
     EditText editAges;
     Button btnNext;
-
+    Intent intentNext;
+    String radio;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_inform);
 
-        Intent intentNext = new Intent(this, RegisterLifeActivity.class);
+        intentNext = new Intent(this, RegisterLifeActivity.class);
 
         editRost = findViewById(R.id.editRost);
         editWeight = findViewById(R.id.editWeight);
@@ -52,21 +53,23 @@ public class RegisterInformActivity extends AppCompatActivity {
 
     }
 
-//    public void onRadioButtonClicked(View view) {
-//        // Is the button now checked?
-//        boolean checked = ((RadioButton) view).isChecked();
-//
-//        // Check which radio button was clicked
-//        switch(view.getId()) {
-//            case R.id.radioM:
-//                if (checked)
-//                    // Pirates are the best
-//                    break;
-//            case R.id.radioF:
-//                if (checked)
-//                    // Ninjas rule
-//                    break;
-//        }
-//    }
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        int id = view.getId();
+        if (id == R.id.radioM) {
+            if (checked) {
+                radio = "M";
+                intentNext.putExtra("sex", radio);
+            }
+        } else if (id == R.id.radioF) {
+            if (checked) {
+                radio = "Ж";
+                intentNext.putExtra("sex", radio);
+            }
+        }
+    }
 
 }

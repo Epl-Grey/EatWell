@@ -34,28 +34,37 @@ public class RegisterLifeActivity extends AppCompatActivity {
         String rost = intentNext.getStringExtra("rost");
         String weight = intentNext.getStringExtra("weight");
         String ages = intentNext.getStringExtra("ages");
+        String sex = intentNext.getStringExtra("sex");
 
 
 
         rl1.setOnClickListener(view -> {
-
+            intentNext.putExtra("activity", "Сидячий");
             btnNext.setVisibility(View.VISIBLE);
         });
 
         rl2.setOnClickListener(view -> {
+            intentNext.putExtra("activity", "Малоактивный");
             btnNext.setVisibility(View.VISIBLE);
         });
 
         rl3.setOnClickListener(view -> {
+            intentNext.putExtra("activity", "Активный");
             btnNext.setVisibility(View.VISIBLE);
         });
 
         rl4.setOnClickListener(view -> {
+            intentNext.putExtra("activity", "Очень активный");
             btnNext.setVisibility(View.VISIBLE);
         });
 
         btnNext.setOnClickListener(view -> {
-
+            intentNext.putExtra("aim", aim);
+            intentNext.putExtra("rost", rost);
+            intentNext.putExtra("weight", weight);
+            intentNext.putExtra("ages", ages);
+            intentNext.putExtra("sex", sex);
+            startActivity(intentNext);
         });
 
     }
