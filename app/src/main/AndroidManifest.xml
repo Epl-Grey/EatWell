@@ -23,6 +23,7 @@
             android:exported="false" />
         <activity
             android:name=".RegisterInformActivity"
+
             android:exported="false" />
         <activity
             android:name=".RegisterAimActivity"

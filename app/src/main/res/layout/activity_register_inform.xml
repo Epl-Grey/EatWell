@@ -25,22 +25,20 @@
 
         <TextView
             android:id="@+id/register"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="20dp"
-            android:text="Регистрация"
-            android:textSize="32sp"
-            android:layout_marginLeft="25dp"
-            android:layout_below="@+id/listItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/montserrt4"
-            android:textColor="@color/white"
-            />
-
+            android:textStyle="normal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:textSize="32sp"
+            android:textColor="#ffffff"
+            tools:text="Регистрация"/>
         <TextView
             android:id="@+id/dates"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:text="Основные данные"
             android:textSize="20sp"
             android:layout_marginLeft="25dp"
@@ -134,13 +132,20 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnNext"
-            android:layout_width="100dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="660dp"
-            android:layout_marginLeft="250dp"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@drawable/whbtn_small"
+            android:layout_marginTop="154dp"
+            android:textColor="@color/black"
+            android:clickable="true"
             android:textAllCaps="false"
-            android:text="Далее"
-            android:textSize="20sp"/>
+            android:fontFamily="@font/montserrt4"
+            android:focusable="true"
+            android:layout_marginBottom="65dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/editAges"
+            android:layout_alignParentEnd="true"
+           />
 
     </RelativeLayout>
 

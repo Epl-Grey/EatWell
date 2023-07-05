@@ -24,7 +24,6 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var passwordEditText: EditText
     lateinit var repeatPasswordEditText: EditText
     lateinit var registerButton: Button
-    lateinit var loginButton: Button
 
     lateinit var saveState: SaveState
 
@@ -38,7 +37,7 @@ class RegisterActivity : AppCompatActivity() {
         passwordEditText = findViewById(R.id.password_edittext)
         repeatPasswordEditText = findViewById(R.id.repeat_password_edittext)
         registerButton = findViewById(R.id.register_button)
-        loginButton = findViewById(R.id.login_button)
+
 
         FirebaseApp.initializeApp(this)
         database = Firebase.database.getReference("Users")
@@ -48,12 +47,7 @@ class RegisterActivity : AppCompatActivity() {
             register()
         }
 
-        loginButton.setOnClickListener {
-            val loginIntent = Intent(this@RegisterActivity, LoginActivity::class.java)
-            startActivity(loginIntent)
-            saveState.state = 2
-            finish()
-        }
+
     }
 
     private fun register(){

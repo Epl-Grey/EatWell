@@ -23,7 +23,8 @@
         android:layout_height="wrap_content"
         android:text="@string/title1"
         android:textAlignment="center"
-        android:layout_marginTop="390dp"
+        android:layout_below="@id/image2"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat2"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -36,7 +37,7 @@
         android:layout_below="@id/title"
         android:text="@string/description1"
         android:fontFamily="@font/montserrt4"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/black"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
@@ -44,11 +45,11 @@
 
 
         <ImageView
-            android:layout_marginTop="80dp"
+           android:layout_marginTop="25dp"
             android:id="@+id/image2"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_below="@+id/description"
+            android:layout_height="10dp"
+        android:layout_below="@+id/image"
             />
 
 
