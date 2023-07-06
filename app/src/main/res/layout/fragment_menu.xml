@@ -5,10 +5,229 @@
     android:layout_height="match_parent"
     tools:context=".fragments.menuFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/ll"
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserrt4"
+            android:gravity="center"
+            android:text="Ваш рацион"
+            android:textColor="@color/black"
+            android:textSize="28dp" />
+
+        <TextView
+            android:id="@+id/kl"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_below="@id/login"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/montserrt4"
+            android:text="Калории"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/rectangle_4"
+            android:layout_width="132dp"
+            android:layout_height="43dp"
+            android:layout_below="@id/login"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edt_kl"
+            android:fontFamily="@font/montserrt4"
+            android:gravity="center"
+            android:hint="1700" />
+
+        <TextView
+            android:id="@+id/bjy"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_below="@id/kl"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/montserrt4"
+            android:text="БЖУ"
+            android:textColor="@color/black"
+            android:textSize="26sp" />
+
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrt4"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_below="@id/bjy"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="150dp"
+                android:textColor="#4D4D4D"
+                android:layout_weight="1"
+                android:text="грамм" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="140dp"
+                android:fontFamily="@font/montserrt4"
+                android:textSize="20sp"
+                android:textColor="#4D4D4D"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/textView"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/bjy"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:text="процент" />
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_below="@id/textView2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Белки"
+            android:gravity="center"
+            android:textColor="#4D4D4D"
+            android:textSize="23sp" />
+            <EditText
+                android:id="@+id/rectangle_5"
+                android:layout_width="100dp"
+                android:layout_height="43dp"
+                android:background="@drawable/edt_gr"
+                android:layout_below="@id/textView2"
+                android:layout_marginLeft="153dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrt4"
+                android:gravity="center"
+
+/>
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="106dp"
+                android:layout_height="43dp"
+                android:text="Жиры"
+                android:gravity="center_vertical"
+                android:layout_below="@id/textView3"
+                android:textColor="#4D4D4D"
+                android:layout_marginLeft="20dp"
+                android:textSize="23sp" />
+        <TextView
+            android:id="@+id/textView55"
+            android:layout_width="106dp"
+            android:layout_height="43dp"
+            android:text="Углеводы"
+            android:gravity="center_vertical"
+            android:layout_below="@id/textView4"
+            android:textColor="#4D4D4D"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="23sp" />
+            <EditText
+                android:id="@+id/rectangle_51"
+                android:layout_width="wrap_content"
+                android:layout_height="43dp"
+                android:background="@drawable/edt_gray"
+                android:fontFamily="@font/montserrt4"
+                android:layout_toRightOf="@id/rectangle_5"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@id/textView2"
+                android:gravity="center"
+                android:hint="84" />
+
+            <EditText
+            android:id="@+id/rectangle_52"
+            android:layout_width="100dp"
+            android:layout_height="43dp"
+            android:background="@drawable/edt_gray"
+            android:fontFamily="@font/montserrt4"
+            android:gravity="center"
+                android:layout_marginLeft="153dp"
+
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/rectangle_5"
+            android:hint="84" />
+
+            <EditText
+                android:id="@+id/rectangle5"
+                android:layout_width="100dp"
+                android:layout_height="43dp"
+                android:background="@drawable/edt_gr"
+                android:fontFamily="@font/montserrt4"
+                android:layout_toRightOf="@id/rectangle_5"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@id/textView3"
+                android:layout_marginRight="20dp"
+
+                android:gravity="center"
+                android:hint="84"
+                />
+        <EditText
+            android:id="@+id/rectangl9"
+            android:layout_width="100dp"
+            android:layout_height="43dp"
+            android:background="@drawable/edt_gr"
+            android:fontFamily="@font/montserrt4"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/rectangle_5"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+
+            android:layout_below="@id/rectangle5"
+            android:gravity="center"
+            android:hint="84"
+            />
+            <EditText
+            android:id="@+id/rectangl5"
+            android:layout_width="100dp"
+            android:layout_height="43dp"
+            android:background="@drawable/edt_gr"
+                android:layout_below="@id/rectangle5"
+            android:fontFamily="@font/montserrt4"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="153dp"
+            android:gravity="center"
+            android:hint="84" />
+
+        <TextView
+            android:id="@+id/otkaz"
+            android:layout_width="332dp"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrt4"
+            android:layout_below="@id/rectangl9"
+            android:textSize="17dp"
+            android:layout_marginTop="20dp"
+            android:text="От чего стоит отказаться?"
+            android:gravity="center_vertical"
+            />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_below="@id/otkaz"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/spinner"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                />
+    </RelativeLayout>
 </FrameLayout>

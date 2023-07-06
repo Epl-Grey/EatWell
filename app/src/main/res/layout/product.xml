@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:background="@drawable/row_layout"
+        android:id="@+id/la"
+        android:layout_height="wrap_content"
+    />
+
+        <ImageView
+            android:id="@+id/imageDish"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="12dp"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:text="Сыр"
+            android:fontFamily="@font/montserrt4"
+            android:layout_marginTop="10dp"
+            android:textSize="25sp"
+            android:layout_toRightOf="@id/imageDish"
+            android:textAppearance="@style/kl" />
+
+        <TextView
+            android:id="@+id/kl"
+            android:layout_width="14dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/name"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/imageDish"
+            android:gravity="top"
+            android:text="3"
+            android:textAppearance="@style/kl" />
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="142dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/name"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="32dp"
+            android:layout_toRightOf="@id/kl"
+            android:gravity="top"
+            android:fontFamily="@font/montserrt4"
+            android:text="калории"
+            android:textAppearance="@style/kl" />
+
+        <TextView
+            android:id="@+id/belkik"
+            android:layout_width="14dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/kl"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserrt4"
+            android:layout_toRightOf="@id/imageDish"
+            android:gravity="top"
+            android:text="3"
+            android:textAppearance="@style/kl" />
+
+        <TextView
+            android:id="@+id/belki"
+            android:layout_width="142dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/kl"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserrt4"
+            android:layout_marginRight="32dp"
+            android:layout_toRightOf="@id/kl"
+            android:gravity="top"
+            android:text="белков"
+            android:textAppearance="@style/kl" />
+        <TextView
+            android:id="@+id/yglk"
+            android:layout_width="14dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/belki"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/imageDish"
+            android:gravity="top"
+            android:text="3"
+            android:textAppearance="@style/kl" />
+
+        <TextView
+            android:id="@+id/ygl"
+            android:layout_width="142dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/belki"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="32dp"
+            android:layout_toRightOf="@id/kl"
+            android:gravity="top"
+            android:text="углеводов"
+            android:textAppearance="@style/kl" />
+    <TextView
+        android:id="@+id/jk"
+        android:layout_width="14dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/ygl"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/imageDish"
+        android:gravity="top"
+        android:text="3"
+        android:textAppearance="@style/kl" />
+
+    <TextView
+        android:id="@+id/j"
+        android:layout_width="142dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/ygl"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="32dp"
+        android:layout_toRightOf="@id/kl"
+        android:gravity="top"
+        android:text="жиров"
+        android:textAppearance="@style/kl" />
+
+
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/id_storage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/la"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        />
+</RelativeLayout>
