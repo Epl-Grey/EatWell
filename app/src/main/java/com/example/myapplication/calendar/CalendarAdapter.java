@@ -62,7 +62,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
             }
             if(date.equals(CalendarUtils.selectedDate)){
                 holder.parentView.setBackgroundResource(R.drawable.selectitem);
-                holder.weekText.setText("");
+                holder.weekText.setTextAppearance(R.style.tue_selected);
             } else {
                 holder.parentView.setBackgroundResource(R.drawable.noselectitem);
 
