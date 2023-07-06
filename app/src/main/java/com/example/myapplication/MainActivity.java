@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("LOGIN: " + SharedPreferenceManager.INSTANCE.getLogin(this));
     }
 
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener = item -> {

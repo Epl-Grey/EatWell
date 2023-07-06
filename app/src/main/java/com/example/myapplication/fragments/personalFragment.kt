@@ -1,66 +1,69 @@
-package com.example.myapplication.fragments;
+package com.example.myapplication.fragments
 
-import android.os.Bundle;
+import android.content.ContentValues.TAG
+import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.example.myapplication.R
+import com.example.myapplication.SharedPreferenceManager
+import com.example.myapplication.firebase.UserModel
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
 
-import androidx.fragment.app.Fragment;
+class personalFragment : Fragment() {
+    lateinit var heightTextView: TextView
+    lateinit var ageTextView: TextView
+    lateinit var weightTextView: TextView
+    lateinit var aimTextView: TextView
+    lateinit var activityTextView: TextView
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+    private lateinit var database: DatabaseReference
 
-import com.example.myapplication.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link personalFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class personalFragment extends Fragment {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
+        val viewP = inflater.inflate(R.layout.fragment_personal, container, false)
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+        heightTextView = viewP.findViewById(R.id.textView23)
+        ageTextView = viewP.findViewById(R.id.textView2)
+        weightTextView = viewP.findViewById(R.id.ves2)
+        aimTextView = viewP.findViewById(R.id.aim2)
+        activityTextView = viewP.findViewById(R.id.obras2)
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+        database = Firebase.database.getReference("Users")
+        database.keepSynced(true)
 
-    public personalFragment() {
-        // Required empty public constructor
-    }
+        val postListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val user = dataSnapshot.getValue<UserModel>()
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment personalFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static personalFragment newInstance(String param1, String param2) {
-        personalFragment fragment = new personalFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+                heightTextView.text = user!!.height
+                ageTextView.text = user.birthdate
+                weightTextView.text = user.birthdate
+                aimTextView.text = user.aim
+                activityTextView.text = user.activity
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+                println("Пол: " + user.sex)
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException())
+            }
         }
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_personal, container, false);
+        val login = SharedPreferenceManager.getLogin(requireContext())
+
+        database.orderByChild("login").equalTo(login).addValueEventListener(postListener)
+
+        return viewP
     }
 }

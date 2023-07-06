@@ -132,6 +132,7 @@ class RegisterActivity : AppCompatActivity() {
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException())
                 database.orderByChild("login").equalTo(newUser.login).removeEventListener(this)
                 saveState.state = 2
+
                 finish()
             }
         }
