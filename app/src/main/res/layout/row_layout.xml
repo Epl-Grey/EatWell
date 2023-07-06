@@ -25,7 +25,7 @@ android:id="@+id/la"
     android:layout_marginLeft="12dp"
     android:layout_marginTop="11dp"
     android:gravity="top"
-    android:text="@string/name"
+    android:text="Завтрак"
     android:textAppearance="@style/some_id" />
 
     <TextView
@@ -51,15 +51,6 @@ android:id="@+id/la"
         android:text="Время готовки 10 минут"
         android:textAppearance="@style/kl" />
 
-    <ImageView
-        android:id="@+id/redactor"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginHorizontal="380dp"
-        android:layout_marginTop="120dp"
-        android:text="@string/time"
-        android:textAlignment="center"
-        android:textAppearance="@style/time_" />
 
     <TextView
         android:id="@+id/id_storage"
