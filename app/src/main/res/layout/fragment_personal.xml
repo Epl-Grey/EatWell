@@ -1,20 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.personalFragment">
 
-  <TextView
-    android:id="@+id/login"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="30dp"
-    android:fontFamily="@font/montserrt4"
-    android:gravity="center"
-    android:text="Личный кабинет"
-    android:textColor="@color/black"
-    android:textSize="28dp" />
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+    >
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrt4"
+        android:gravity="center"
+        android:text="Личный кабинет"
+        android:textColor="@color/black"
+        android:textSize="28dp" />
+    <TextView
+        android:id="@+id/kl"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_below="@id/login"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/montserrt4"
+        android:text="Общие данные"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_below="@id/kl"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Рост"
+        android:gravity="center"
+        android:textColor="#4D4D4D"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_below="@id/textView3"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Возраст"
+        android:gravity="center"
+        android:textColor="#4D4D4D"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/ves"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_below="@id/textView"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Вес"
+        android:gravity="center"
+        android:textColor="#4D4D4D"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/aim"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_below="@id/ves"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Цель"
+        android:gravity="center"
+        android:textColor="#4D4D4D"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/obras"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_below="@id/aim"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="образ жизни"
+        android:gravity="center"
+        android:textColor="#4D4D4D"
+        android:textSize="18sp" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/kl"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/lj"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Рост"
+        android:gravity="center"
+        android:textColor="#4D4D4D"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/lj"
+        android:layout_below="@id/textView3"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Возраст"
+        android:gravity="center"
+        android:textColor="#4D4D4D"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/ves2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/lj"
+        android:layout_below="@id/textView"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Вес"
+        android:gravity="center"
+        android:textColor="#4D4D4D"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/aim2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ves"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/lj"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Цель"
+        android:gravity="center"
+        android:textColor="#4D4D4D"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/obras2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aim"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/lj"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Ораз жизни"
+        android:gravity="center"
+        android:textColor="#4D4D4D"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/login"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/icons" />
+
+
+  </RelativeLayout>
 </FrameLayout>
