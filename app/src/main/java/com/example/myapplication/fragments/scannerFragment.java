@@ -4,9 +4,6 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -15,35 +12,42 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 
+import com.example.myapplication.R;
+import com.example.myapplication.YandexImagesParser;
+import com.example.myapplication.firebase.ProductModel;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-
-import com.example.myapplication.R;
 
 import java.io.IOException;
 
 public class scannerFragment extends Fragment {
 
     TextView textView;
+    TextView addText;
     TextView barcodeTextView;
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 200;
     private SurfaceView surfaceView;
     private CameraSource cameraSource;
     String barcode;
+    private DatabaseReference mDatabase;
+    ImageView imageView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,7 +57,11 @@ public class scannerFragment extends Fragment {
         Button btn = viewP.findViewById(R.id.btn);
         barcodeTextView = viewP.findViewById(R.id.barcodeTextView);
         textView = viewP.findViewById(R.id.text);
+        addText = viewP.findViewById(R.id.addText);
         surfaceView = viewP.findViewById(R.id.surfaceView);
+        imageView = viewP.findViewById(R.id.image_view);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference("Products");
 
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -63,7 +71,15 @@ public class scannerFragment extends Fragment {
         }
         btn.setOnClickListener(v -> {
             MyAsyncTask myAsyncTask = new MyAsyncTask();
+            textView.setText("Подождите");
             myAsyncTask.execute(barcodeTextView.getText().toString());
+            addText.setVisibility(View.VISIBLE);
+        });
+
+        addText.setOnClickListener(v -> {
+            new ImageParserTask().execute(textView.getText().toString());
+            ProductModel user = new ProductModel("qwerty123",textView.getText().toString());
+            mDatabase.child(user.getName()).setValue(user);
         });
 
         return viewP;
@@ -164,6 +180,29 @@ public class scannerFragment extends Fragment {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             textView.setText(result);
+        }
+    }
+
+    private class ImageParserTask extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                // Выполняем парсинг картинки по тексту запроса
+                return YandexImagesParser.parseFirstImage(strings[0]);
+            } catch (IOException e) {
+                Log.e("MainActivity", String.valueOf(e));
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String imageUrl) {
+
+            if (imageUrl != null) {
+                // Используем Picasso для загрузки и отображения картинки
+                Picasso.get().load(imageUrl).into(imageView);
+            }
         }
     }
 

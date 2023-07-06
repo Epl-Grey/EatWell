@@ -63,7 +63,7 @@
             android:textSize="20dp"
             android:fontFamily="@font/montserrt4"
             android:maxLines="1"
-            android:inputType="textVisiblePassword"
+            android:inputType="textPassword"
             android:layout_marginHorizontal="40dp"
             />
 
@@ -80,7 +80,7 @@
             android:textColorHint="@color/white"
             android:layout_marginTop="20dp"
             android:hint="Повторите пароль"
-            android:inputType="textVisiblePassword"
+            android:inputType="textPassword"
             android:maxLines="1"
             android:textSize="20dp" />
 
