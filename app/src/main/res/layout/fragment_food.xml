@@ -4,7 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.foodFragment">
-
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrt4"
+        android:gravity="center"
+        android:text="Ваши продукты"
+        android:textColor="@color/black"
+        android:textSize="28dp" />
 
 
 </FrameLayout>
