@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.example.myapplication.R;
 
 public class RegisterLifeActivity extends AppCompatActivity {
 
@@ -30,12 +33,22 @@ public class RegisterLifeActivity extends AppCompatActivity {
         rl4 = findViewById(R.id.rl4);
         btnNext = findViewById(R.id.btnNext);
 
-        String aim = intentNext.getStringExtra("aim");
-        String rost = intentNext.getStringExtra("rost");
-        String weight = intentNext.getStringExtra("weight");
-        String ages = intentNext.getStringExtra("ages");
-        String sex = intentNext.getStringExtra("sex");
 
+        TextView login = findViewById(R.id.login);
+        String aim = getIntent().getStringExtra("aim");
+        intentNext.putExtra("aim", aim);
+
+        String rost = getIntent().getStringExtra("rost");
+        intentNext.putExtra("rost", rost);
+
+        String weight = getIntent().getStringExtra("weight");
+        intentNext.putExtra("weight", weight);
+
+        String ages = getIntent().getStringExtra("ages");
+        intentNext.putExtra("ages", ages);
+
+        String sex = getIntent().getStringExtra("sex");
+        intentNext.putExtra("sex", sex);
 
 
         rl1.setOnClickListener(view -> {
@@ -59,11 +72,7 @@ public class RegisterLifeActivity extends AppCompatActivity {
         });
 
         btnNext.setOnClickListener(view -> {
-            intentNext.putExtra("aim", aim);
-            intentNext.putExtra("rost", rost);
-            intentNext.putExtra("weight", weight);
-            intentNext.putExtra("ages", ages);
-            intentNext.putExtra("sex", sex);
+
             startActivity(intentNext);
         });
 

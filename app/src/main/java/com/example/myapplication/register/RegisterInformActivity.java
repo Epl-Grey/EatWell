@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.Toast;
+import android.widget.TextView;
+
+import com.example.myapplication.R;
 
 public class RegisterInformActivity extends AppCompatActivity {
 
@@ -31,22 +33,23 @@ public class RegisterInformActivity extends AppCompatActivity {
 
         btnNext = findViewById(R.id.btnNext);
 
-        String rost = editRost.getText().toString();
-        String weight = editWeight.getText().toString();
-        String ages = editAges.getText().toString();
-        String aim = intentNext.getStringExtra("aim");
+        intentNext.putExtra("sex", "Mужчина");
+
+        TextView login = findViewById(R.id.login);
+
+        String aim = getIntent().getStringExtra("aim");
+        intentNext.putExtra("aim", aim);
+        login.setText(aim);
+
+
         btnNext.setOnClickListener(view -> {
-            if (rost.matches("")) {
-                if(weight.matches("")) {
-                    if(ages.matches("")) {
-                        intentNext.putExtra("rost", rost);
-                        intentNext.putExtra("weight", weight);
-                        intentNext.putExtra("ages", ages);
-                        intentNext.putExtra("aim", aim);
-                        startActivity(intentNext);
-                    }
-                }
-            }
+            String rost = editRost.getText().toString();
+            String weight = editWeight.getText().toString();
+            String ages = editAges.getText().toString();
+            intentNext.putExtra("rost", rost);
+            intentNext.putExtra("weight", weight);
+            intentNext.putExtra("ages", ages);
+            startActivity(intentNext);
         });
 
 
@@ -61,12 +64,12 @@ public class RegisterInformActivity extends AppCompatActivity {
         int id = view.getId();
         if (id == R.id.radioM) {
             if (checked) {
-                radio = "M";
+                radio = "Mужчина";
                 intentNext.putExtra("sex", radio);
             }
         } else if (id == R.id.radioF) {
             if (checked) {
-                radio = "Ж";
+                radio = "Женщина";
                 intentNext.putExtra("sex", radio);
             }
         }

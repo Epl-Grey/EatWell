@@ -1,14 +1,18 @@
-package com.example.myapplication
+package com.example.myapplication.register
 
 import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.KeyEvent
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import com.example.myapplication.MainActivity
+import com.example.myapplication.R
+import com.example.myapplication.SaveState
+import com.example.myapplication.SharedPreferenceManager
 import com.example.myapplication.firebase.UserModel
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DataSnapshot
@@ -29,14 +33,32 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
 
+    lateinit var sex: String
+    lateinit var birthdate: String
+    lateinit var weight: String
+    lateinit var height: String
+    lateinit var activity: String
+    lateinit var aim: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+
 
         loginEditText = findViewById(R.id.login_edittext)
         passwordEditText = findViewById(R.id.password_edittext)
         repeatPasswordEditText = findViewById(R.id.repeat_password_edittext)
         registerButton = findViewById(R.id.register_button)
+
+
+        var login: TextView = findViewById(R.id.login)
+
+        sex = intent.getStringExtra("sex").toString()
+        birthdate = intent.getStringExtra("ages").toString()
+        weight = intent.getStringExtra("weight").toString()
+        height = intent.getStringExtra("rost").toString()
+        activity = intent.getStringExtra("activity").toString()
+        aim = intent.getStringExtra("aim").toString()
 
 
         FirebaseApp.initializeApp(this)
@@ -82,6 +104,12 @@ class RegisterActivity : AppCompatActivity() {
         val newUser = UserModel(
             loginEditText.text.toString(),
             passwordHash,
+            sex = sex,
+            birthdate = birthdate,
+            weight = weight,
+            height = height,
+            activity = activity,
+            aim = aim
         )
 
         val userExistsListener = object : ValueEventListener {
@@ -95,8 +123,8 @@ class RegisterActivity : AppCompatActivity() {
                 }
                 database.orderByChild("login").equalTo(newUser.login).removeEventListener(this)
 
-                val mainIntent = Intent(this@RegisterActivity, MainActivity::class.java);
-                startActivity(mainIntent);
+                val mainIntent = Intent(this@RegisterActivity, MainActivity::class.java)
+                startActivity(mainIntent)
             }
 
             override fun onCancelled(databaseError: DatabaseError) {

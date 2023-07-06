@@ -19,14 +19,14 @@
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".RegisterLifeActivity"
+            android:name=".register.RegisterLifeActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterInformActivity"
+            android:name=".register.RegisterInformActivity"
 
             android:exported="false" />
         <activity
-            android:name=".RegisterAimActivity"
+            android:name=".register.RegisterAimActivity"
             android:exported="false" />
         <activity
             android:name=".splashscreen"
@@ -53,7 +53,7 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".register.RegisterActivity"
             android:exported="false" />
     </application>
 

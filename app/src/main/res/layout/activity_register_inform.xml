@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterInformActivity">
+    tools:context=".register.RegisterInformActivity">
 
     <RelativeLayout
         android:background="@drawable/background"
@@ -57,6 +57,7 @@
             android:background="@drawable/edt"
             android:layout_marginLeft="60dp"
             android:hint="Рост"
+            android:inputType="number"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
 
@@ -129,6 +130,7 @@
             android:layout_marginRight="60dp"
             android:layout_marginLeft="60dp"
             android:hint="Вес"
+            android:inputType="number"
             android:textColorHint="@color/white" />
 
         <EditText
