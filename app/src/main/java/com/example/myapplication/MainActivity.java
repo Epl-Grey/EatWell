@@ -14,7 +14,11 @@ import com.example.myapplication.fragments.scannerFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
+
+    MealsDatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +36,12 @@ public class MainActivity extends AppCompatActivity {
 //        startActivity(onBordingIntent);
 
 
-
+        dbHelper = new MealsDatabaseHelper(getApplicationContext());
+        try {
+            dbHelper.createDataBase();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener = item -> {
