@@ -150,10 +150,3 @@
 
 
     </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_below="@id/la"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        />
-</RelativeLayout>
