@@ -19,7 +19,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 
-class personalFragment : Fragment() {
+class PersonalFragment : Fragment() {
     lateinit var heightTextView: TextView
     lateinit var ageTextView: TextView
     lateinit var weightTextView: TextView

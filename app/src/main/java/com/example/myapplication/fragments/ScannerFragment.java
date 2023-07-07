@@ -21,6 +21,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
+import com.example.myapplication.SharedPreferenceManager;
 import com.example.myapplication.YandexImagesParser;
 import com.example.myapplication.firebase.ProductModel;
 import com.google.android.gms.vision.CameraSource;
@@ -37,7 +38,7 @@ import org.jsoup.nodes.Element;
 
 import java.io.IOException;
 
-public class scannerFragment extends Fragment {
+public class ScannerFragment extends Fragment {
 
     TextView textView;
     TextView addText;
@@ -78,7 +79,8 @@ public class scannerFragment extends Fragment {
 
         addText.setOnClickListener(v -> {
             new ImageParserTask().execute(textView.getText().toString());
-            ProductModel user = new ProductModel("qwerty123",textView.getText().toString());
+            String login = SharedPreferenceManager.INSTANCE.getLogin(requireContext());
+            ProductModel user = new ProductModel(login, textView.getText().toString());
             mDatabase.child(user.getName()).setValue(user);
         });
 

@@ -1,26 +1,21 @@
 package com.example.myapplication;
 
-import static java.security.AccessController.getContext;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-public class dishSimpleAdapter extends ArrayAdapter<dishView> {
+public class DishSimpleAdapter extends ArrayAdapter<DishView> {
 
-    public dishSimpleAdapter(@NonNull Context context, ArrayList<dishView> arrayList) {
+    public DishSimpleAdapter(@NonNull Context context, ArrayList<DishView> arrayList) {
 
         // pass the context and arrayList for the super
         // constructor of the ArrayAdapter class
@@ -40,24 +35,19 @@ public class dishSimpleAdapter extends ArrayAdapter<dishView> {
         }
 
         // get the position of the view from the ArrayAdapter
-        dishView currentNumberPosition = getItem(position);
+        DishView currentNumberPosition = getItem(position);
 
         TextView timeDayText = currentItemView.findViewById(R.id.timeDay);
+
+        ImageView dishImageView = currentItemView.findViewById(R.id.imageDish);
+        TextView nameTextView = currentItemView.findViewById(R.id.name);
+
         assert currentNumberPosition != null;
         timeDayText.setText(currentNumberPosition.getName());
 
-        // then according to the position of the view assign the desired image for the same
-        TextView nameText = currentItemView.findViewById(R.id.name);
-        assert currentNumberPosition != null;
-        nameText.setText(currentNumberPosition.getName());
-
-        // then according to the position of the view assign the desired TextView 1 for the same
-        TextView klText = currentItemView.findViewById(R.id.time);
-        klText.setText(currentNumberPosition.getTime());
+        nameTextView.setText(currentNumberPosition.getName());
 
 
-        TextView idText = currentItemView.findViewById(R.id.id_storage);
-        idText.setText(currentNumberPosition.getId());
         // then return the recyclable view
         return currentItemView;
     }

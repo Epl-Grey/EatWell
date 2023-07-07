@@ -23,11 +23,11 @@ import android.widget.TextView;
 
 import com.example.myapplication.DatabaseHelper;
 import com.example.myapplication.DishManager;
+import com.example.myapplication.DishView;
 import com.example.myapplication.R;
 import com.example.myapplication.calendar.CalendarAdapter;
 import com.example.myapplication.calendar.CalendarUtils;
-import com.example.myapplication.dishSimpleAdapter;
-import com.example.myapplication.dishView;
+import com.example.myapplication.DishSimpleAdapter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment {
     LocalDate date;
     public SQLiteDatabase db;
     DatabaseHelper databaseHelper;
-    dishSimpleAdapter pillAdapter;
+    DishSimpleAdapter pillAdapter;
     public ArrayList<LocalDate> days;
     public ArrayList<String> numberWeek;
     Cursor dataCursor;
@@ -96,8 +96,8 @@ public class HomeFragment extends Fragment {
 
         int length = testCursor.getCount();
         System.out.println("selectedDate " + selectedDate);
-        ArrayList<dishView> arrayList = new ArrayList<dishView>();
-        pillAdapter = new dishSimpleAdapter(getActivity(), arrayList);
+        ArrayList<DishView> arrayList = new ArrayList<DishView>();
+        pillAdapter = new DishSimpleAdapter(getActivity(), arrayList);
         dishList.setAdapter(pillAdapter);
         for (int i = 1; i <= length; i++) {
 
@@ -120,9 +120,9 @@ public class HomeFragment extends Fragment {
 
                 dishCursor = db.rawQuery("SELECT " + DatabaseHelper.COLUMN_ID + ", " + DatabaseHelper.COLUMN_NAME  + ", " + DatabaseHelper.COLUMN_TIMEDAY + ", " + DatabaseHelper.COLUMN_TIME + " FROM " + DatabaseHelper.TABLE + " WHERE " + DatabaseHelper.COLUMN_ID + " =   \""+ id + "\"", null);
                 dishCursor.moveToFirst();
-                arrayList.add(new dishView(dishCursor.getString(1), dishCursor.getString(2), dishCursor.getString(3), dishCursor.getString(0)));
+//                arrayList.add(new DishView(dishCursor.getString(1), dishCursor.getString(2), dishCursor.getString(3), dishCursor.getString(0)));
 
-                pillAdapter = new dishSimpleAdapter(getContext(), arrayList);
+                pillAdapter = new DishSimpleAdapter(getContext(), arrayList);
                 dishList.setAdapter(pillAdapter);
 
             }

@@ -7,12 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.myapplication.R;
 
 
-public class menuFragment extends Fragment {
+public class MenuFragment extends Fragment {
 
 
     @Override

@@ -29,7 +29,7 @@
             android:name=".register.RegisterAimActivity"
             android:exported="false" />
         <activity
-            android:name=".splashscreen"
+            android:name=".SplashscreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

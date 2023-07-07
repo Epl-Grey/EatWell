@@ -7,12 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.myapplication.fragments.HomeFragment;
-import com.example.myapplication.fragments.foodFragment;
-import com.example.myapplication.fragments.menuFragment;
-import com.example.myapplication.fragments.personalFragment;
-import com.example.myapplication.fragments.scannerFragment;
+import com.example.myapplication.fragments.FoodFragment;
+import com.example.myapplication.fragments.MenuFragment;
+import com.example.myapplication.fragments.PersonalFragment;
+import com.example.myapplication.fragments.ScannerFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
 
 import java.io.IOException;
 
@@ -54,13 +53,13 @@ public class MainActivity extends AppCompatActivity {
         if (itemId == R.id.home) {
             selectedFragment = new HomeFragment();
         } else if (itemId == R.id.menu) {
-            selectedFragment = new menuFragment();
+            selectedFragment = new MenuFragment();
         } else if (itemId == R.id.personal) {
-            selectedFragment = new personalFragment();
+            selectedFragment = new PersonalFragment();
         } else if (itemId == R.id.scanner) {
-            selectedFragment = new scannerFragment();
+            selectedFragment = new ScannerFragment();
         }else if (itemId == R.id.food) {
-            selectedFragment = new foodFragment();
+            selectedFragment = new FoodFragment();
         }
         // It will help to replace the
         // one fragment to other.
